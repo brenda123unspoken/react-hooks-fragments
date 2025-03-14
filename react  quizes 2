@@ -1,0 +1,284 @@
+Components and Props Quiz
+Due No due date Points 11 Questions 11 Time limit None Allowed attempts 3
+This quiz is no longer available as the course has been concluded.
+Attempt history
+Attempt	Time	Score
+KEPT	Attempt 2	10 minutes	9 out of 11
+LATEST	Attempt 2	10 minutes	9 out of 11
+Attempt 1	4 minutes	5 out of 11
+ Answers will be shown after your last attempt
+Score for this attempt: 9 out of 11
+Submitted 13 Jun 2024 at 14:43
+This attempt took 10 minutes.
+ 
+PartialQuestion 1
+0.5 / 1 pts
+I want to render the Card component inside of my Container component. How would I properly export the Card component? Select all that apply.
+
+function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+  I don't know.
+  
+function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+
+export default Card;
+  
+function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+export cardComponent;
+  
+export default function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+Correct! We can use the export default keywords to export a variable or function, and import it with import.
+Source/s:
+
+Organizing Code with Import/Export
+ 
+Question 2
+1 / 1 pts
+I want to render the Card component inside of my Container component. How would I properly import the Card component?
+
+// src/Card.js
+function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+
+export default Card;
+  
+// src/App.js
+import { Card } from "./Card";
+  
+// src/App.js
+import default Card from './Card'
+  
+// src/App.js
+import Card from "./Card";
+Correct! When importing a default export , we use the default importsyntax along with a relative path to the file where the export is declared.
+  I don't know.
+Source/s:
+
+Organizing Code with Import/Export
+ 
+PartialQuestion 3
+0.5 / 1 pts
+Which of the following components are valid? Select all that apply.
+  
+function Card() {
+  return (
+    <div>
+      <h1>React</h1>
+      <p>Component</p>
+    </div>
+  );
+}
+  
+function Card() {
+  <div>
+    <h1>React</h1>
+    <p>Component</p>
+  </div>
+}
+  
+function card() {
+  return (
+    <div>
+      <h1>React</h1>
+      <p>Component</p>
+    </div>
+  );
+}
+  
+function Card({ title, subtitle }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  );
+}
+Source/s:
+
+React Components Basics
+Props Destructuring and Default Values
+ 
+Question 4
+1 / 1 pts
+A React component is a function that takes in 
+props
+ and returns 
+JSX
+ .
+Answer 1:
+props
+Answer 2:
+JSX
+Source/s:
+
+React Components Basics
+ 
+Question 5
+1 / 1 pts
+A React function component must start with a capital letter.
+  True 
+Correct! React differentiates between a component and a regular DOM element based on capitalization. For example, making an `` component with a lowercase name wouldn't work:
+
+function article() {
+  return (
+    <div>
+      <h1>React</h1>
+      <p>Component</p>
+    </div>
+  );
+}
+
+ReactDOM.render(<article />, document.getElementById("root"));
+Trying to render this component would result in React rendering an`` HTML elementLinks to an external site.instead of the `` component.
+
+Using an uppercase name for the function fixes this problem:
+
+function Article() {
+  return (
+    <div>
+      <h1>React</h1>
+      <p>Component</p>
+    </div>
+  );
+}
+
+ReactDOM.render(<Article />, document.getElementById("root"));
+  False 
+Source/s:
+
+React Components Basics
+ 
+Question 6
+1 / 1 pts
+Given the following code, what would appear in the console?
+
+function Parent() {
+  const header = "Hello";
+  const contents = "World";
+
+  return <Child title={header} body={contents} minutesToRead={10} />;
+}
+
+function Child(props) {
+  console.log(props);
+  // ... return JSX
+}
+  
+{
+  title: "header",
+  body: "contents",
+  minutesToRead: 10
+}
+  
+{
+  title: "Hello",
+  body: "World",
+  minutesToRead: 10
+}
+Correct! The props parameter in every component is an object of key/value pairs based on the attributes assigned by the parent component.
+  
+{
+  header: "Hello",
+  contents: "World",
+  minutesToRead: 10
+}
+  I don't know.
+Source/s:
+
+Props Basics
+ 
+Question 7
+1 / 1 pts
+We use ______ to pass data into a component.
+props
+Source/s:
+
+Props Basics
+ 
+Question 8
+1 / 1 pts
+What is a React component? Select all that apply.
+  A function that takes in props and returns JSX. 
+  A reusable function for creating UI elements. 
+  I don't know.
+  An HTML file. 
+Source/s:
+
+React Components Basics
+ 
+Question 9
+1 / 1 pts
+When should you use the key prop?
+  If two components are siblings. 
+  When rendering an array of components. 
+Correct! The key prop is a special prop that React uses to help optimize performance when rendering arrays of components.
+  I don't know.
+  Any time .map is used in a component.
+Source/s:
+
+Lists and Keys
+ 
+IncorrectQuestion 10
+0 / 1 pts
+Which of the following are true of JSX? Select all that apply.
+  I don't know.
+  JSX stands for JavaScript XML. 
+  JSX is an abstraction of the DOM. 
+  JSX and HTML are interchangeable. 
+  JSX is a valid form of JavaScript syntax. 
+On its own, JSX isn't valid JavaScript and is not part of the language. JSX must be transpiled into valid JavaScript using a tool like Babel.
+Source/s:
+
+Writing JSX
+ 
+Question 11
+1 / 1 pts
+The following is a valid React component:
+
+function App() {
+  return (
+    <Article />
+    <Comment />
+  );
+}
+  Yes 
+  False 
+Correct! A component can only return one top-level element. To return multiple top-level elements, you can use aFragmentLinks to an external site..
+Source/s:
+
+Writing JSX
+Quiz score: 9 out of 11
+Last
